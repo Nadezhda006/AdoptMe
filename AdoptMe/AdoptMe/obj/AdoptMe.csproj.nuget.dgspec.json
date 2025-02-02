@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\AdoptMe\\AdoptMe\\AdoptMe.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\AdoptMe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\AdoptMe\\AdoptMe\\AdoptMe.csproj": {
+    "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\AdoptMe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AdoptMe\\AdoptMe\\AdoptMe.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\AdoptMe.csproj",
         "projectName": "AdoptMe",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\AdoptMe\\AdoptMe\\AdoptMe.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\AdoptMe.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\AdoptMe\\AdoptMe\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Source\\Repos\\AdoptMe1\\AdoptMe\\AdoptMe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,6 +63,12 @@
               "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.7, )"
             }

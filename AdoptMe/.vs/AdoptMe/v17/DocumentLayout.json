@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\data\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\data\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\data\\migrations\\20250202190351_petscheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\data\\migrations\\20250202190351_petscheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202185828_PetScheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdoptMe\\Data\\Migrations\\20250202185828_PetScheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|c:\\users\\hp\\source\\repos\\adoptme1\\adoptme\\adoptme\\data\\migrations\\00000000000000_createidentityschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD09B359-DB4C-4E63-B785-1B6C988A3FDC}|AdoptMe\\AdoptMe.csproj|solutionrelative:adoptme\\data\\migrations\\00000000000000_createidentityschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202185418_PetScheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AdoptMe\\Data\\Migrations\\20250202185418_PetScheme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PetsController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Controllers\\PetsController.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Controllers\\PetsController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Controllers\\PetsController.cs",
+              "RelativeToolTip": "AdoptMe\\Controllers\\PetsController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T19:30:30.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20250202190351_PetScheme.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202190351_PetScheme.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\Migrations\\20250202190351_PetScheme.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202190351_PetScheme.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\Migrations\\20250202190351_PetScheme.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T19:03:51.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250202185828_PetScheme.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202185828_PetScheme.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\Migrations\\20250202185828_PetScheme.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202185828_PetScheme.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\Migrations\\20250202185828_PetScheme.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:58:29.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "00000000000000_CreateIdentitySchema.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:56:44.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250202185418_PetScheme.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202185418_PetScheme.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\Migrations\\20250202185418_PetScheme.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Migrations\\20250202185418_PetScheme.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\Migrations\\20250202185418_PetScheme.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:54:18.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:31:12.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Entities\\User.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:20:11.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Program.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Program.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Program.cs",
+              "RelativeToolTip": "AdoptMe\\Program.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBIAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:05:54.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pet.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Entities\\Pet.cs",
+              "RelativeDocumentMoniker": "AdoptMe\\Data\\Entities\\Pet.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\AdoptMe1\\AdoptMe\\AdoptMe\\Data\\Entities\\Pet.cs",
+              "RelativeToolTip": "AdoptMe\\Data\\Entities\\Pet.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T17:56:13.021Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
