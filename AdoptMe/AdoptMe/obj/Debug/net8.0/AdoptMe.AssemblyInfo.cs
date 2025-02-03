@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdoptMe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5925ad503633bde57ce28d429e011138171f52ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9425299c8a84fc6d325e401938686bc3d5f349a")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdoptMe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdoptMe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

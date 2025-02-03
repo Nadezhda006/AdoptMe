@@ -25,6 +25,20 @@ namespace AdoptMe.Controllers
             return View(await _context.Pets.ToListAsync());
         }
 
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return _context.Pets != null ?
+                        View() :
+                        Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
+        }
+
+        public async Task<IActionResult> ShowSearchResults(string SearchName,string SearchType)
+        {
+            return _context.Pets != null ?
+                         View("Index", await _context.Pets.Where(x => x.Name.Contains(SearchName)).Where(x=>x.Type.Contains(SearchType)).ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
+        }
+
         // GET: Pets/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -43,6 +57,7 @@ namespace AdoptMe.Controllers
             return View(pet);
         }
 
+       
         // GET: Pets/Create
         public IActionResult Create()
         {
