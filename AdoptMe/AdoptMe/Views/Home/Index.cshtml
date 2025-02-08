@@ -1,4 +1,4 @@
-﻿@{
+﻿@* @{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +6,44 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+ *@
+
+@{
+    ViewData["Title"] = "Welcome!";
+}
+
+<link rel="stylesheet" href="~/css/home-styles.css" />
+
+<div class="hero">
+    <h1>🐾 Welcome to <span>Pet Heaven</span>! 🐾</h1>
+    <p>Find your new fluffy friend today! 💕</p>
+    <a asp-controller="Pets" class="btn btn-primary">Browse Pets</a> 
+
+</div>
+
+<section class="fun-section">
+    <h2>Why Adopt a Pet? 🐱</h2>
+    <div class="features">
+        <div class="feature-card">
+            <img src="https://pngimg.com/d/dog_PNG50375.png" alt="Love">
+            <h3>Love & Comfort ❤️</h3>
+            <p>Dogs bring joy and warmth to your home!</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto:best/conure-care-sheet-hero.psd" alt="Play">
+            <h3>Fun Moments 🎾</h3>
+            <p>You'll have the best playful companion!</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://www.freeiconspng.com/thumbs/cat-png/baby-cat-png-12.png" alt="Help">
+            <h3>Save a Life 🏡</h3>
+            <p>Give a homeless cat a second chance!</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready to Adopt? 😻</h2>
+    <p>Join our community and give a pet a loving home!</p>
+    <a asp-controller="Pets" asp-action="Index" class="btn btn-secondary">Adopt Now</a>
+</section>

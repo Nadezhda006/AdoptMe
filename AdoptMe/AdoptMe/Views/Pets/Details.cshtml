@@ -1,4 +1,4 @@
-﻿@model AdoptMe.Data.Entities.Pet
+﻿@* @model AdoptMe.Data.Entities.Pet
 
 @{
     ViewData["Title"] = "Details";
@@ -81,4 +81,80 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+</div>
+ *@
+
+@model AdoptMe.Data.Entities.Pet
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<link rel="stylesheet" href="~/css/styles.css" />
+
+<header class="details-header">
+    <h1>@Model.Name</h1>
+</header>
+
+<div class="container details-container"> 
+    <div class="details-card">
+        <div class="image-container">
+            <img src="@Model.ImageURL" style="width:500px; height: 400px;" alt="@Model.Name">
+        </div>
+
+        <div class="details-info">
+            <h2>CatDetails</h2>
+            <table class="details-table">
+                <tr>
+                    <td><strong>PetId:</strong></td>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <td><strong>Breed:</strong></td>
+                    <td>@Model.Breed</td>
+                </tr>
+                <tr>
+                    <td><strong>Age:</strong></td>
+                    <td>@Model.Age years old</td>
+                </tr>
+                <tr>
+                    <td><strong>Sex:</strong></td>
+                    <td>@Model.Sex </td>
+                </tr>
+                <tr>
+                    <td><strong>Color:</strong></td>
+                    <td>@Model.Color</td>
+                </tr>
+                <tr>
+                    <td><strong>Type:</strong></td>
+                    <td>@Model.Type</td>
+                </tr>
+                <tr>
+                    <td><strong>Location:</strong></td>
+                    <td>@Model.Location</td>
+                </tr>
+                <tr>
+                    <td><strong>Weight:</strong></td>
+                    <td>@Model.Weight</td>
+                </tr>
+                <tr>
+                    <td><strong>Price:</strong></td>
+                    <td>@Model.Price</td>
+                </tr>
+                <tr>
+                    <td><strong>Details:</strong></td>
+                    <td>@Model.Details</td>
+                </tr>
+            </table>
+
+            <div class="buttons">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary">Back to list</a>
+            </div>
+        </div>
+    </div>
 </div>
