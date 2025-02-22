@@ -97,21 +97,21 @@
 
 
 @{
-    ViewData["Title"] = "Kitti";
+    ViewData["Title"] = "Pet";
 }
 
 <link rel="stylesheet" href="~/css/styles.css" />
 
 <header>
-    <h1>Kitti</h1>
+    <h1>Pet list</h1>
 </header>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Add new kitty</a>
+    <a asp-action="Create" class="btn btn-primary">Add new pet</a>
 </p>
 
 <div class="container">
-    <div class="cat-list">
+    <div class="pet-list">
         @foreach (var item in Model)
         {
             <div class="cat-card" style=" width: 250px; height: 400px;">
