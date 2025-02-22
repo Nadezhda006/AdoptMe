@@ -4,21 +4,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AdoptMe.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<User>
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-        public DbSet<Pet> Pets { get; set; }
+        public virtual DbSet<Pet> Pets { get; set; } = default!;
+        public virtual DbSet<Vet> Vet { get; set; } = default!;
+        public virtual DbSet<Visit> Visits { get; set; } = default!;
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<User>();
+            builder.HasDefaultSchema("database");
 
-            builder.HasDefaultSchema("identity");
-            
+            builder.Entity<Visit>()
+                .HasKey(v => new { v.PetId, v.VetId });
+
+            builder.Entity<Visit>()
+                .HasOne(v => v.Pet)
+                .WithMany(c => c.Visits)
+                .HasForeignKey(v => v.PetId);
+
+            builder.Entity<Visit>()
+                .HasOne(v => v.Vet)
+                .WithMany(vet => vet.Visits)
+                .HasForeignKey(v => v.VetId);
+
         }
     }
 }

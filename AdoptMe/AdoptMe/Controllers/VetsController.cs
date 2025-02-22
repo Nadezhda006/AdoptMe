@@ -7,40 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdoptMe.Data;
 using AdoptMe.Data.Entities;
-using Microsoft.AspNetCore.Authorization;
 
 namespace AdoptMe.Controllers
 {
-    public class PetsController : Controller
+    public class VetsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PetsController(ApplicationDbContext context)
+        public VetsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Pets
+        // GET: Vets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pets.ToListAsync());
+            return View(await _context.Vet.ToListAsync());
         }
 
-        public IActionResult ShowSearchForm()
-        {
-            return _context.Pets != null ?
-                        View() :
-                        Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
-        }
-
-        public async Task<IActionResult> ShowSearchResults(string SearchName,string SearchType)
-        {
-            return _context.Pets != null ?
-                         View("Index", await _context.Pets.Where(x => x.Name.Contains(SearchName)).Where(x=>x.Type.Contains(SearchType)).ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
-        }
-
-        // GET: Pets/Details/5
+        // GET: Vets/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -48,41 +33,39 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var pet = await _context.Pets
+            var vet = await _context.Vet
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (pet == null)
+            if (vet == null)
             {
                 return NotFound();
             }
 
-            return View(pet);
+            return View(vet);
         }
 
-        
-        // GET: Pets/Create
+        // GET: Vets/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Pets/Create
+        // POST: Vets/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] Pet pet)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Phonenumber")] Vet vet)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pet);
+                _context.Add(vet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(pet);
+            return View(vet);
         }
 
-        // GET: Pets/Edit/5
+        // GET: Vets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,22 +73,22 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var pet = await _context.Pets.FindAsync(id);
-            if (pet == null)
+            var vet = await _context.Vet.FindAsync(id);
+            if (vet == null)
             {
                 return NotFound();
             }
-            return View(pet);
+            return View(vet);
         }
 
-        // POST: Pets/Edit/5
+        // POST: Vets/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] Pet pet)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Phonenumber")] Vet vet)
         {
-            if (id != pet.Id)
+            if (id != vet.Id)
             {
                 return NotFound();
             }
@@ -114,12 +97,12 @@ namespace AdoptMe.Controllers
             {
                 try
                 {
-                    _context.Update(pet);
+                    _context.Update(vet);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PetExists(pet.Id))
+                    if (!VetExists(vet.Id))
                     {
                         return NotFound();
                     }
@@ -130,11 +113,10 @@ namespace AdoptMe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(pet);
+            return View(vet);
         }
 
-        // GET: Pets/Delete/5
-        [Authorize(Roles = "Admin")]
+        // GET: Vets/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,34 +124,34 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var pet = await _context.Pets
+            var vet = await _context.Vet
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (pet == null)
+            if (vet == null)
             {
                 return NotFound();
             }
 
-            return View(pet);
+            return View(vet);
         }
 
-        // POST: Pets/Delete/5
+        // POST: Vets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pet = await _context.Pets.FindAsync(id);
-            if (pet != null)
+            var vet = await _context.Vet.FindAsync(id);
+            if (vet != null)
             {
-                _context.Pets.Remove(pet);
+                _context.Vet.Remove(vet);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PetExists(int id)
+        private bool VetExists(int id)
         {
-            return _context.Pets.Any(e => e.Id == id);
+            return _context.Vet.Any(e => e.Id == id);
         }
     }
 }
