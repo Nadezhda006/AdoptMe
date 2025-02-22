@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdoptMe.Data;
 using AdoptMe.Data.Entities;
-using Microsoft.AspNetCore.Authorization;
 
 namespace AdoptMe.Controllers
 {
@@ -26,7 +25,7 @@ namespace AdoptMe.Controllers
             return View(await _context.Pets.ToListAsync());
         }
 
-        public IActionResult ShowSearchForm()
+        public async Task<IActionResult> ShowSearchForm()
         {
             return _context.Pets != null ?
                         View() :
@@ -58,7 +57,7 @@ namespace AdoptMe.Controllers
             return View(pet);
         }
 
-        
+       
         // GET: Pets/Create
         public IActionResult Create()
         {
@@ -68,7 +67,6 @@ namespace AdoptMe.Controllers
         // POST: Pets/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] Pet pet)
@@ -134,7 +132,6 @@ namespace AdoptMe.Controllers
         }
 
         // GET: Pets/Delete/5
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

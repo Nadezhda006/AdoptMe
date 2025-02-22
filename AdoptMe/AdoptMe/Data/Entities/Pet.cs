@@ -1,8 +1,8 @@
 ﻿namespace AdoptMe.Data.Entities
 {
-    public class Pet:BaseEntity
+    public class Pet
     {
-      
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public string Breed { get; set; }
@@ -14,6 +14,5 @@
         public double Price { get; set; }
         public string Location { get; set; }
         public string Details { get; set; }
-        public virtual ICollection<Visit>? Visits { get; set; }
     }
 }
