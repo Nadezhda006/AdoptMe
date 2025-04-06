@@ -8,36 +8,37 @@ using Microsoft.EntityFrameworkCore;
 using AdoptMe.Data;
 using AdoptMe.Data.Entities;
 using Microsoft.AspNetCore.Authorization;
-
+using AdoptMe.Services.Abstractions;
+using AdoptMe.DTOs;
 namespace AdoptMe.Controllers
 {
     public class PetsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IPetService _petService;
 
-        public PetsController(ApplicationDbContext context)
+        public PetsController(IPetService petService, ApplicationDbContext context)
         {
+            _petService = petService;
             _context = context;
         }
 
         // GET: Pets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pets.ToListAsync());
+            return View(await _petService.GetAllAsync());
         }
 
         public IActionResult ShowSearchForm()
         {
-            return _context.Pets != null ?
+            return _petService != null ?
                         View() :
                         Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
         }
 
         public async Task<IActionResult> ShowSearchResults(string SearchName,string SearchType)
         {
-            return _context.Pets != null ?
-                         View("Index", await _context.Pets.Where(x => x.Name.Contains(SearchName)).Where(x=>x.Type.Contains(SearchType)).ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
+            return View("Index",_petService.GetByNameAndType(SearchName,SearchType));
         }
 
         // GET: Pets/Details/5
@@ -48,8 +49,8 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var pet = await _context.Pets
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pet = await _petService.GetByIdAsync(id.Value);
+                
             if (pet == null)
             {
                 return NotFound();
@@ -71,15 +72,14 @@ namespace AdoptMe.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] Pet pet)
+        public async Task<IActionResult> Create([Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] PetDTO petDTO)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pet);
-                await _context.SaveChangesAsync();
+                await _petService.CreateAsync(petDTO);
                 return RedirectToAction(nameof(Index));
             }
-            return View(pet);
+            return View(petDTO);
         }
 
         // GET: Pets/Edit/5
@@ -90,7 +90,7 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var pet = await _context.Pets.FindAsync(id);
+            var pet = await _petService.GetByIdAsync(id.Value);
             if (pet == null)
             {
                 return NotFound();
@@ -103,9 +103,9 @@ namespace AdoptMe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] Pet pet)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Type,Breed,Sex,Age,Color,Weight,ImageURL,Price,Location,Details")] PetDTO petDTO)
         {
-            if (id != pet.Id)
+            if (id != petDTO.Id)
             {
                 return NotFound();
             }
@@ -114,12 +114,11 @@ namespace AdoptMe.Controllers
             {
                 try
                 {
-                    _context.Update(pet);
-                    await _context.SaveChangesAsync();
+                    await _petService.UpdateAsync(petDTO);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PetExists(pet.Id))
+                    if (!await PetExistsAsync(petDTO.Id))
                     {
                         return NotFound();
                     }
@@ -130,7 +129,7 @@ namespace AdoptMe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(pet);
+            return View(petDTO);
         }
 
         // GET: Pets/Delete/5
@@ -142,8 +141,7 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var pet = await _context.Pets
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pet = await _petService.GetByIdAsync(id.Value);
             if (pet == null)
             {
                 return NotFound();
@@ -157,19 +155,14 @@ namespace AdoptMe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pet = await _context.Pets.FindAsync(id);
-            if (pet != null)
-            {
-                _context.Pets.Remove(pet);
-            }
-
-            await _context.SaveChangesAsync();
+            await _petService.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PetExists(int id)
+        private async Task<bool> PetExistsAsync(int id)
         {
-            return _context.Pets.Any(e => e.Id == id);
+            var item = await _petService.GetByIdAsync(id);
+            return item != null;
         }
     }
 }

@@ -1,6 +1,11 @@
 using AdoptMe.Data;
 using AdoptMe.Data.Entities;
 using AdoptMe.Data.Seeders;
+using AdoptMe.Repositories.Abstractions;
+using AdoptMe.Repositories;
+using AdoptMe.Services.Abstractions;
+using AdoptMe.Services;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +24,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
+builder.Services.AddScoped<IPetRepository, PetRepository>();
+builder.Services.AddScoped<IVetRepository, VetRepository>();
+builder.Services.AddScoped<IVisitRepository, VisitRepository>();
+builder.Services.AddScoped<IPetService, PetService>();
+builder.Services.AddScoped<IVetService, VetService>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

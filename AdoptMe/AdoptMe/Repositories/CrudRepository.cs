@@ -48,6 +48,7 @@ namespace AdoptMe.Repositories
                 .ToList();
         }
 
+
         public async Task<T?> GetByIdAsync(int id)
         {
             return await _set.FindAsync(id);

@@ -46,12 +46,12 @@ namespace AdoptMe.Services
             return _mapper.Map<PetDTO>(pet);
         }
 
-        public ICollection<PetDTO> GetByName(string name)
+        public ICollection<PetDTO> GetByNameAndType(string name,string type)
         {
-            var pets = _petsRepository.GetByFilter(pet => pet.Name == name);
+            var pets = _petsRepository.GetByFilter(pet => pet.Name == name && pet.Type==type);
             return _mapper.Map<ICollection<PetDTO>>(pets);
         }
-
+       
         public async Task UpdateAsync(PetDTO petDto)
         {
             var pet = _mapper.Map<Pet>(petDto);

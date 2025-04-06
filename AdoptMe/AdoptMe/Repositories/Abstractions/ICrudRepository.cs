@@ -1,4 +1,5 @@
 ﻿using AdoptMe.Data.Entities;
+using System;
 
 namespace AdoptMe.Repositories.Abstractions
 {

@@ -7,22 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdoptMe.Data;
 using AdoptMe.Data.Entities;
+using AdoptMe.Services.Abstractions;
+using AdoptMe.DTOs;
 
 namespace AdoptMe.Controllers
 {
     public class VetsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IVetService _vetService;
 
-        public VetsController(ApplicationDbContext context)
+        public VetsController(IVetService vetService)
         {
-            _context = context;
+            _vetService = vetService;
         }
 
         // GET: Vets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Vet.ToListAsync());
+            return View(await _vetService.GetAllAsync());
         }
 
         // GET: Vets/Details/5
@@ -33,8 +35,7 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var vet = await _context.Vet
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var vet = await _vetService.GetByIdAsync(id.Value);
             if (vet == null)
             {
                 return NotFound();
@@ -54,15 +55,14 @@ namespace AdoptMe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Phonenumber")] Vet vet)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Phonenumber")] VetDTO vetDto)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(vet);
-                await _context.SaveChangesAsync();
+                await _vetService.CreateAsync(vetDto);
                 return RedirectToAction(nameof(Index));
             }
-            return View(vet);
+            return View(vetDto);
         }
 
         // GET: Vets/Edit/5
@@ -73,7 +73,7 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var vet = await _context.Vet.FindAsync(id);
+            var vet = await _vetService.GetByIdAsync(id.Value);
             if (vet == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace AdoptMe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Phonenumber")] Vet vet)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Phonenumber")] VetDTO vetDto)
         {
-            if (id != vet.Id)
+            if (id != vetDto.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,11 @@ namespace AdoptMe.Controllers
             {
                 try
                 {
-                    _context.Update(vet);
-                    await _context.SaveChangesAsync();
+                    await _vetService.UpdateAsync(vetDto);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!VetExists(vet.Id))
+                    if (!await VetExistsAsync(vetDto.Id))
                     {
                         return NotFound();
                     }
@@ -113,7 +112,7 @@ namespace AdoptMe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(vet);
+            return View(vetDto);
         }
 
         // GET: Vets/Delete/5
@@ -124,8 +123,7 @@ namespace AdoptMe.Controllers
                 return NotFound();
             }
 
-            var vet = await _context.Vet
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var vet = await _vetService.GetByIdAsync(id.Value);
             if (vet == null)
             {
                 return NotFound();
@@ -139,19 +137,13 @@ namespace AdoptMe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var vet = await _context.Vet.FindAsync(id);
-            if (vet != null)
-            {
-                _context.Vet.Remove(vet);
-            }
-
-            await _context.SaveChangesAsync();
+            await _vetService.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
-        private bool VetExists(int id)
+        private async Task<bool> VetExistsAsync(int id)
         {
-            return _context.Vet.Any(e => e.Id == id);
+            return (await _vetService.GetByIdAsync(id)) != null;
         }
     }
 }
