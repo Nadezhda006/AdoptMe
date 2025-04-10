@@ -9,7 +9,9 @@ namespace AdoptMe.Services.Abstractions
         Task CreateAsync(PetDTO petDto);
         Task UpdateAsync(PetDTO petDto);
         Task DeleteAsync(int petId);
-        ICollection<PetDTO> GetByNameAndType(string name,string type);
+        ICollection<PetDTO> GetByNameBreedAndType(string name,string breed, string type);
+
+        //ICollection<PetDTO> GetByTypeAndBreed(string type, string breed);
         Task AddCatVisitAsync(VisitDTO VisitDTO);        
     }
 }

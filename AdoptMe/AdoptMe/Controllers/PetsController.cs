@@ -36,10 +36,12 @@ namespace AdoptMe.Controllers
                         Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
         }
 
-        public async Task<IActionResult> ShowSearchResults(string SearchName,string SearchType)
+        public async Task<IActionResult> ShowSearchResults(string SearchName,string SearchType,string SearchBreed)
         {
-            return View("Index",_petService.GetByNameAndType(SearchName,SearchType));
+            return View("Index",_petService.GetByNameBreedAndType(SearchName,SearchBreed,SearchType));
         }
+
+        
 
         // GET: Pets/Details/5
         public async Task<IActionResult> Details(int? id)

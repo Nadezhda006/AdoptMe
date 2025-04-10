@@ -1,0 +1,62 @@
+﻿namespace AdoptMe.wwwroot.css
+
+.search-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.search-form-container {
+    background-color: #fff0f5;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.btn-search {
+    background-color: lightpink;
+    border-color: hotpink;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+    .btn-search:hover {
+        background-color: hotpink;
+        border-color:hotpink
+    }
+
+.btn-secondary {
+    background-color: lightpink;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border-color: hotpink;
+    text-decoration: none;
+    color: white;
+}
+
+    .btn-secondary:hover {
+        background-color: hotpink;
+        border-color: hotpink;
+    }

@@ -40,18 +40,30 @@ namespace AdoptMe.Services
             return _mapper.Map<ICollection<PetDTO>>(pets);
         }
 
+        //public ICollection<PetDTO> GetByBreed(string breed)
+        //{
+        //    var pets = _petsRepository.GetByFilter(pet => pet.Breed == breed);
+        //    return _mapper.Map<ICollection<PetDTO>>(pets);
+        //}
+
         public async Task<PetDTO> GetByIdAsync(int id)
         {
             var pet = await _petsRepository.GetByIdAsync(id);
             return _mapper.Map<PetDTO>(pet);
         }
 
-        public ICollection<PetDTO> GetByNameAndType(string name,string type)
+        public ICollection<PetDTO> GetByNameBreedAndType(string name,string breed, string type)
         {
-            var pets = _petsRepository.GetByFilter(pet => pet.Name == name && pet.Type==type);
+            var pets = _petsRepository.GetByFilter(pet => pet.Name == name && pet.Type == type || pet.Breed==breed && pet.Type == type);
             return _mapper.Map<ICollection<PetDTO>>(pets);
         }
-       
+
+        //public ICollection<PetDTO> GetByTypeAndBreed(string type, string breed)
+        //{
+        //    var pets = _petsRepository.GetByFilter(pet => pet.Type == type  && pet.Breed == breed);
+        //    return _mapper.Map<ICollection<PetDTO>>(pets);
+        //}
+
         public async Task UpdateAsync(PetDTO petDto)
         {
             var pet = _mapper.Map<Pet>(petDto);
