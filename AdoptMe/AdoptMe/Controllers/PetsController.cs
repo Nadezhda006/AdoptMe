@@ -14,13 +14,11 @@ namespace AdoptMe.Controllers
 {
     public class PetsController : Controller
     {
-        private readonly ApplicationDbContext _context;
         private readonly IPetService _petService;
 
         public PetsController(IPetService petService, ApplicationDbContext context)
         {
             _petService = petService;
-            _context = context;
         }
 
         // GET: Pets
