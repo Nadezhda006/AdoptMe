@@ -1,26 +1,3 @@
-/*html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}*/
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -34,6 +11,7 @@ header {
     padding: 15px 0;
     text-align: center;
     font-size: 24px;
+    border-radius: 0 0 10px 10px;
 }
 
 .container {
@@ -50,16 +28,13 @@ header {
 }
 
 .cat-card {
-    /*background-color: #fff;
-    text-align: center;*/
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 280px;
-    height: 450px;
     padding: 10px;
+    width: 250px;
+    height: 400px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -72,9 +47,6 @@ header {
     }
 
     .cat-card img {
-        /*height: auto;
-         border-bottom: 1px solid #ddd;*/
-
         width: 100%;
         height: 200px;
         object-fit: cover;
@@ -92,45 +64,59 @@ header {
         font-size: 1em;
     }
 
-.btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 1px;
-    margin-top: auto;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1px 2px;
-    margin: 5px;
-    /* border-radius: 5px;*/
-    text-decoration: blink;
+.btn-primary {
+    background-color: #ff69b4;
+    color: white;
+    text-decoration: none;
     font-weight: bold;
+    border-radius: 50px;
+    padding: 5px 20px;
+    margin: 5px;
+    font-size: 20px;
     transition: background 0.3s ease;
 }
 
-.btn-primary {
-    background: #007bff;
+    .btn-primary:hover {
+        background-color: #ff1493;
+    }
+
+.btn-details {
+    background-color: #17a2b8;
     color: #fff;
-    font-size: 15px;
-    padding: 14px 28px;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.btn-info {
-    background: #17a2b8;
-    color: #fff;
-}
+    .btn-details:hover {
+        color: black;
+    }
 
-.btn-warning {
-    background: #ffc107;
+.btn-edit {
+    background-color: #ffc107;
     color: #000;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
 }
 
-.btn-danger {
-    background: #dc3545;
+    .btn-edit:hover {
+        color: white;
+    }
+
+.btn-delete {
+    background-color: #dc3545;
     color: #fff;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.btn:hover {
-    opacity: 0.8;
-}
+    .btn-delete:hover {
+        color: black;
+    }
